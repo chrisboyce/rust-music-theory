@@ -30,16 +30,16 @@ impl Chord {
     pub fn to_string(&self) -> String {
         let chord_letter = self.root.to_string();
         let chord_quality = match self.quality {
-            Quality::Major => "M".to_string(),
+            Quality::Major => "".to_string(),
             Quality::Minor => "m".to_string(),
             Quality::Diminished => "dim".to_string(),
             Quality::Augmented => "+".to_string(),
             Quality::HalfDiminished => todo!(),
-            Quality::Dominant => todo!(),
+            Quality::Dominant => "M".to_string(),
             Quality::Suspended2 => "sus2".to_string(),
             Quality::Suspended4 => "sus4".to_string(),
         };
-        format!("{}{}", chord_letter, chord_quality)
+        format!("[{}]({})", chord_letter, chord_quality)
     }
 
     /// Create a new chord with a given inversion.
